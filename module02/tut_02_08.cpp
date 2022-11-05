@@ -219,7 +219,11 @@ void UCreateMesh(GLMesh &mesh)
 
         // index 4
         1.0f, -1.0f, 0.0f,      // bottom-right of the screen
-        0.0f, 1.0f, 0.0f, 1.0f  // green
+        0.0f, 1.0f, 0.0f, 1.0f, // green
+
+        // index 5
+        0.0f, 1.0f, 0.0f,       // top-center of the screen
+        1.0f, 0.0f, 1.0f, 1.0f, // fuchsia
     };
 
     glGenVertexArrays(1, &mesh.vao); // we can also generate multiple VAOs or buffers at the same time
@@ -231,7 +235,7 @@ void UCreateMesh(GLMesh &mesh)
     glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW); // Sends vertex or coordinate data to the GPU
     
     // Creates a buffer object for the indices
-    GLushort indices[] = {0, 1, 2, 3, 2, 4}; // Using index 2 twice
+    GLushort indices[] = {0, 1, 2, 3, 2, 4, 5, 0, 3, 0, 2, 3}; // Using index 2 twice
     mesh.nIndices = sizeof(indices) / sizeof(indices[0]);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh.vbos[1]);
