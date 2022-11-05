@@ -1,63 +1,63 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_03", "module02\tutorial_02_03\tutorial_02_03.vcxproj", "{E858714C-C103-42E9-8507-9F1272AF96B5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_02", "module02tutorials\tutorial_02_02\tutorial_02_02.vcxproj", "{F839AAFD-ABB5-48BB-ACB1-6FEB33C26268}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_04", "module02\tutorial_02_04\tutorial_02_04.vcxproj", "{2C87931F-F0CF-42FD-9F9B-FEC55856E284}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_03", "module02tutorials\tutorial_02_03\tutorial_02_03.vcxproj", "{E858714C-C103-42E9-8507-9F1272AF96B5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_05", "module02\tutorial_02_05\tutorial_02_05.vcxproj", "{6D0E7A3E-F0FD-4E4E-AFA4-ED39F8AA1620}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_04", "module02tutorials\tutorial_02_04\tutorial_02_04.vcxproj", "{2C87931F-F0CF-42FD-9F9B-FEC55856E284}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_06", "module02\tutorial_02_06\tutorial_02_06.vcxproj", "{A1132A42-448C-402A-A8AD-438403EF18A8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_05", "module02tutorials\tutorial_02_05\tutorial_02_05.vcxproj", "{6D0E7A3E-F0FD-4E4E-AFA4-ED39F8AA1620}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_07", "module02\tutorial_02_07\tutorial_02_07.vcxproj", "{58D74839-F9E8-46DE-91A7-A9CFCEA8D81F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_06", "module02tutorials\tutorial_02_06\tutorial_02_06.vcxproj", "{A1132A42-448C-402A-A8AD-438403EF18A8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_08", "module02\tutorial_02_08\tutorial_02_08.vcxproj", "{91C45A29-3AA7-4BFF-A967-072AE362285C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_07", "module02tutorials\tutorial_02_07\tutorial_02_07.vcxproj", "{58D74839-F9E8-46DE-91A7-A9CFCEA8D81F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 2", "Module 2", "{54D788D5-8F6F-4760-8177-9396EA4DAB10}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_08", "module02tutorials\tutorial_02_08\tutorial_02_08.vcxproj", "{91C45A29-3AA7-4BFF-A967-072AE362285C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 3", "Module 3", "{C195D7EB-86C1-4899-B27E-EEA6DE662973}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 2 Tutorial", "Module 2 Tutorial", "{54D788D5-8F6F-4760-8177-9396EA4DAB10}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_02", "module03\tutorial_03_02\tutorial_03_02.vcxproj", "{D6953BD4-C378-4F40-ADA5-0FCCE51D2525}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 3 Tutorial", "Module 3 Tutorial", "{C195D7EB-86C1-4899-B27E-EEA6DE662973}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_04", "module03\tutorial_03_04\tutorial_03_04.vcxproj", "{D43F6964-92F7-44D8-A4F2-8C09504017F8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_02", "module03tutorials\tutorial_03_02\tutorial_03_02.vcxproj", "{D6953BD4-C378-4F40-ADA5-0FCCE51D2525}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_03", "module03\tutorial_03_03\tutorial_03_03.vcxproj", "{D0DB66CB-3B78-4940-A52C-53FEA7074C97}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_04", "module03tutorials\tutorial_03_04\tutorial_03_04.vcxproj", "{D43F6964-92F7-44D8-A4F2-8C09504017F8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_05", "module03\tutorial_03_05\tutorial_03_05.vcxproj", "{4FAE3AC6-48E3-4059-9534-CA932EFBF7E9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_03", "module03tutorials\tutorial_03_03\tutorial_03_03.vcxproj", "{D0DB66CB-3B78-4940-A52C-53FEA7074C97}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 4", "Module 4", "{8E517D5B-281E-4E82-ACBE-CFEC193E931A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_03_05", "module03tutorials\tutorial_03_05\tutorial_03_05.vcxproj", "{4FAE3AC6-48E3-4059-9534-CA932EFBF7E9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_01", "module04\tutorial_04_01\tutorial_04_01.vcxproj", "{FD988594-503D-419F-8E35-65D107282226}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 4 Tutorial", "Module 4 Tutorial", "{8E517D5B-281E-4E82-ACBE-CFEC193E931A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_02", "module04\tutorial_04_02\tutorial_04_02.vcxproj", "{4305A23A-6C1F-461F-B6E4-C3E314274315}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_01", "module04tutorials\tutorial_04_01\tutorial_04_01.vcxproj", "{FD988594-503D-419F-8E35-65D107282226}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_03", "module04\tutorial_04_03\tutorial_04_03.vcxproj", "{94119B57-ADEF-4E4B-A89E-6F3E5FF6ACF0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_02", "module04tutorials\tutorial_04_02\tutorial_04_02.vcxproj", "{4305A23A-6C1F-461F-B6E4-C3E314274315}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_04", "module04\tutorial_04_04\tutorial_04_04.vcxproj", "{26E306C3-CB62-4A61-BDDF-8AD35883AC79}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_03", "module04tutorials\tutorial_04_03\tutorial_04_03.vcxproj", "{94119B57-ADEF-4E4B-A89E-6F3E5FF6ACF0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_05", "module04\tutorial_04_05\tutorial_04_05.vcxproj", "{5EC1CCC7-16EE-475B-9878-CEC029C39EEA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_04", "module04tutorials\tutorial_04_04\tutorial_04_04.vcxproj", "{26E306C3-CB62-4A61-BDDF-8AD35883AC79}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 5", "Module 5", "{0356496E-C047-4F12-B61F-AAA29CFB2964}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_04_05", "module04tutorials\tutorial_04_05\tutorial_04_05.vcxproj", "{5EC1CCC7-16EE-475B-9878-CEC029C39EEA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_02_02", "module02\tutorial_02_02\tutorial_02_02.vcxproj", "{F839AAFD-ABB5-48BB-ACB1-6FEB33C26268}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 5 Tutorial", "Module 5 Tutorial", "{0356496E-C047-4F12-B61F-AAA29CFB2964}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_02", "module05\tutorial_05_02\tutorial_05_02.vcxproj", "{5B954C6F-B4C5-4D7E-BD76-387E1B344D88}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_02", "module05tutorials\tutorial_05_02\tutorial_05_02.vcxproj", "{5B954C6F-B4C5-4D7E-BD76-387E1B344D88}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_03", "module05\tutorial_05_03\tutorial_05_03.vcxproj", "{EA419362-AFC7-4AC3-BB34-D8C3F1759AF4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_03", "module05tutorials\tutorial_05_03\tutorial_05_03.vcxproj", "{EA419362-AFC7-4AC3-BB34-D8C3F1759AF4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_04", "module05\tutorial_05_04\tutorial_05_04.vcxproj", "{BC3B6B8B-A531-4A20-81C6-95A830E0B3C9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_04", "module05tutorials\tutorial_05_04\tutorial_05_04.vcxproj", "{BC3B6B8B-A531-4A20-81C6-95A830E0B3C9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_05", "module05\tutorial_05_05\tutorial_05_05.vcxproj", "{771C07F5-E6B0-49F9-A3ED-130FDA4962EE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_05_05", "module05tutorials\tutorial_05_05\tutorial_05_05.vcxproj", "{771C07F5-E6B0-49F9-A3ED-130FDA4962EE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 6", "Module 6", "{6A4278CD-AED5-472B-99D1-A498B2B9987D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 6 Tutorial", "Module 6 Tutorial", "{6A4278CD-AED5-472B-99D1-A498B2B9987D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_06_01", "module06\tutorial_06_01\tutorial_06_01.vcxproj", "{ED948959-04CF-472F-8D2D-D36B170D11FA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_06_01", "module06tutorials\tutorial_06_01\tutorial_06_01.vcxproj", "{ED948959-04CF-472F-8D2D-D36B170D11FA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_06_02", "module06\tutorial_06_02\tutorial_06_02.vcxproj", "{3FD188F7-985B-43DD-AD23-2D3241E6BBAC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_06_02", "module06tutorials\tutorial_06_02\tutorial_06_02.vcxproj", "{3FD188F7-985B-43DD-AD23-2D3241E6BBAC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_06_03", "module06\tutorial_06_03\tutorial_06_03.vcxproj", "{31CA2112-A2EB-4620-A010-DCA3EA4FD0F1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tutorial_06_03", "module06tutorials\tutorial_06_03\tutorial_06_03.vcxproj", "{31CA2112-A2EB-4620-A010-DCA3EA4FD0F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
