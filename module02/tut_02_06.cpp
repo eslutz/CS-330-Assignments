@@ -197,14 +197,14 @@ void UCreateMesh(GLMesh &mesh)
     // Specifies Normalized Device Coordinates (x,y,z) and color (r,g,b,a) for triangle vertices
     GLfloat verts[]=
     {
-        0.0f, 1.0f, 0.0f,       // top-center of the screen
-        1.0f, 0.0f, 0.0f, 1.0f, // red
+        0.25f, 1.0f, 0.0f,       // top-center of the screen
+        0.75f, 0.5f, 0.25f, 1.0f, // red
 
-        -1.0f, -1.0f, 0.0f,     // bottom-left of the screen
-        0.0f, 1.0f, 0.0f, 1.0f, // green
+        -0.5f, -0.5f, 0.0f,     // bottom-left of the screen
+        0.25f, 0.5f, 0.75f, 1.0f, // green
         
-        1.0f, -1.0f, 0.0f,      // bottom-right of the screen
-        0.0f, 0.0f, 1.0f, 1.0f  // blue
+        1.0f, -0.5f, 0.0f,      // bottom-right of the screen
+        0.5f, 0.5f, 0.5f, 1.0f  // blue
     };
 
     mesh.nvertices = 3;
