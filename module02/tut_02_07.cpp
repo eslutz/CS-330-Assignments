@@ -213,10 +213,19 @@ void UCreateMesh(GLMesh &mesh)
         0.0f, 0.0f, 1.0f, 1.0f, // blue
 
         1.0f, -1.0f, 0.0f,      // bottom-right of the screen
+        0.0f, 1.0f, 0.0f, 1.0f, // green
+
+        0.0f, 1.0f, 0.0f,       // top-center of the screen
+        1.0f, 0.0f, 0.0f, 1.0f, // red
+
+        -0.5f, 0.0f, 0.0f,      // bottom-left of the screen
+        0.0f, 0.0f, 1.0f, 1.0f, // blue
+
+        0.5f, 0.0f, 0.0f,      // bottom-right of the screen
         0.0f, 1.0f, 0.0f, 1.0f  // green
     };
 
-    mesh.nvertices = 6;
+    mesh.nvertices = 9;
     
     glGenVertexArrays(1, &mesh.vao); // we can also generate multiple VAOs or buffers at the same time
     glGenBuffers(1, &mesh.vbo); // Creates 1 buffer
