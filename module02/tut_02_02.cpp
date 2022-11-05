@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
         return EXIT_FAILURE;
 
     // Sets the background color of the window to black (it will be implicitely used by glClear)
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
 
     // render loop
     // -----------
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
         UProcessInput(window);
 
         // Clear the background and change the background color to black
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
