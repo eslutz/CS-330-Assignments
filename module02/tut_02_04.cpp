@@ -59,7 +59,7 @@ const char *fragmentShaderSource = "#version 440 core\n"
     "out vec4 FragColor;\n"
     "void main()\n"
     "{\n"
-    "   FragColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);\n"
+    "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
     "}\n\0";
 
 
@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
     UCreateShaderProgram(vertexShaderSource, fragmentShaderSource, gProgramId);
 
     // Sets the background color of the window to black (it will be implicitely used by glClear)
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 
     // render loop
     // -----------
@@ -192,9 +192,9 @@ void UCreateMesh(GLMesh &mesh)
     // Specifies Normalized Device Coordinates for triangle vertices
     GLfloat verts[]=
     {
-         0.0f,  1.0f, 0.0f, // top-center of the screen
-        -1.0f, -1.0f, 0.0f, // bottom-left of the screen
-         1.0f, -1.0f, 0.0f  // bottom-right of the screen
+         0.0f,  0.5f, 0.0f, // top-center of the screen
+        -0.5f, -0.75f, 0.0f, // bottom-left of the screen
+         0.5f, -0.75f, 0.0f  // bottom-right of the screen
     };
 
     mesh.nvertices = 3;
