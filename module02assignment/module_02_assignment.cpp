@@ -83,8 +83,8 @@ int main(int argc, char* argv[])
         return EXIT_FAILURE;
     }
 
-    // Sets the background color of the window to dark cyan (it will be implicitely used by glClear)
-    glClearColor(0.0f, 0.545f, 0.545f, 1.0f);
+    // Sets the background color of the window to dim grey (it will be implicitely used by glClear)
+    glClearColor(0.412f, 0.412f, 0.412f, 1.0f);
 
     // render loop
     // -----------
@@ -172,7 +172,8 @@ void UResizeWindow(GLFWwindow* window, int width, int height)
 void URender()
 {
     // Clear the background
-    glClearColor(0.0f, 0.0, 0.0f, 1.0f);
+    // Set background color to dim grey
+    glClearColor(0.412f, 0.412f, 0.412f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     // Set the shader to be used
