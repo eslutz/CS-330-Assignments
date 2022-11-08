@@ -192,13 +192,13 @@ void URender()
     glClear(GL_COLOR_BUFFER_BIT);
 
     // 1. Scales the shape down by half of its original size in all 3 dimensions
-    glm::mat4 scale = glm::scale(glm::vec3(0.5f, 0.5f, 0.5f));
+    glm::mat4 scale = glm::scale(glm::vec3(0.25f, 1.75f, 0.0f));
 
     // 2. Rotates shape by 45 degrees on the z axis
-    glm::mat4 rotation = glm::rotate(45.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+    glm::mat4 rotation = glm::rotate(30.0f, glm::vec3(0.0f, 0.0f, 1.0f));
 
     // 3. Translates by 0.5 in the y axis
-    glm::mat4 translation = glm::translate(glm::vec3(0.0f, 0.5f, 0.0f));
+    glm::mat4 translation = glm::translate(glm::vec3(- 0.75f, 0.5f, 0.0f));
 
     // Transformations are applied right-to-left order
     glm::mat4 transformation = translation * rotation * scale;
