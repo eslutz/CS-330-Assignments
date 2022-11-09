@@ -210,7 +210,7 @@ void URender()
     glm::mat4 view = glm::translate(glm::vec3(0.0f, 0.0f, -5.0f));
 
     // Creates a orthographic projection
-    glm::mat4 projection = glm::ortho(-5.0f, 5.0f, -5.0f, 5.0f, 0.1f, 100.0f);
+    glm::mat4 projection = glm::ortho(-5.0f, 2.0f, -5.0f, 5.0f, 0.1f, 80.0f);
 
     // Set the shader to be used
     glUseProgram(gProgramId);
