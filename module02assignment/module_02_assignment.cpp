@@ -1,6 +1,6 @@
 /*
-Module 2 Assignment
-Eric Slutz
+ * Module 2 Assignment
+ * Eric Slutz
 */
 
 #include <iostream>         // cout, cerr
