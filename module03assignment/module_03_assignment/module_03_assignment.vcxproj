@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B8327079-FB17-4C13-8915-6E1586BD1548}</ProjectGuid>
+    <ProjectGuid>{4A1D291A-DFDF-4B4D-9BD7-DDDF26E22CF9}</ProjectGuid>
     <RootNamespace>module03assignment</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>module_03_assignment</ProjectName>
