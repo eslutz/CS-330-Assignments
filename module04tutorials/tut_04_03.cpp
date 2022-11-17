@@ -212,6 +212,10 @@ void UProcessInput(GLFWwindow* window)
         gCameraPos -= glm::normalize(glm::cross(gCameraFront, gCameraUp)) * cameraOffset;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         gCameraPos += glm::normalize(glm::cross(gCameraFront, gCameraUp)) * cameraOffset;
+    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+        gCameraPos += cameraOffset * gCameraUp;
+    if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
+        gCameraPos -= cameraOffset * gCameraUp;
 }
 
 
