@@ -179,7 +179,7 @@ bool UInitialize(int argc, char* argv[], GLFWwindow** window)
     glfwSetMouseButtonCallback(*window, UMouseButtonCallback);
 
     // tell GLFW to capture our mouse
-    glfwSetInputMode(*window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetInputMode(*window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
     // GLEW: initialize
     // ----------------
@@ -297,9 +297,9 @@ void UMouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
 // Function called to render a frame
 void URender()
 {
-    const int nrows = 10;
-    const int ncols = 10;
-    const int nlevels = 10;
+    const int nrows = 25;
+    const int ncols = 25;
+    const int nlevels = 25;
 
     const float xsize = 10.0f;
     const float ysize = 10.0f;
@@ -361,6 +361,9 @@ void URender()
 
     // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
     glfwSwapBuffers(gWindow);    // Flips the the back buffer with the front buffer every frame.
+
+    // output gDeltaTime
+    cout << gDeltaTime << endl;
 }
 
 
