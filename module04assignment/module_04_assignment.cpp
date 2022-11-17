@@ -267,8 +267,10 @@ void UMouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
     {
     case GLFW_MOUSE_BUTTON_LEFT:
     {
-        if (action == GLFW_PRESS)
+        if (action == GLFW_PRESS) {
             cout << "Left mouse button pressed" << endl;
+            gCamera.ResetCamera();
+        }
         else
             cout << "Left mouse button released" << endl;
     }

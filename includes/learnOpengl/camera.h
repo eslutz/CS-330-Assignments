@@ -140,6 +140,15 @@ public:
             MovementSpeed = 45.0f;
     }
 
+    // resets camera to the original location
+    void ResetCamera()
+    {
+        Position = glm::vec3(0.0f, 0.0f, 3.0f);
+        Yaw = YAW;
+        Pitch = PITCH;
+        updateCameraVectors();
+    }
+
 private:
     // calculates the front vector from the Camera's (updated) Euler Angles
     void updateCameraVectors()
