@@ -133,6 +133,11 @@ void UProcessInput(GLFWwindow* window)
         cout << "You pressed D! ";
         keypress = true; 
     }
+    if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+    {
+        cout << "Groovy! ";
+        keypress = true;
+    }
 
     if (keypress)
     {
