@@ -27,6 +27,7 @@ void UProcessInput(GLFWwindow* window);
 void UMousePositionCallback(GLFWwindow* window, double xpos, double ypos);
 void UMouseScrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 void UMouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
+bool leftClick = false;
 
 // main function. Entry point to the OpenGL program
 int main(int argc, char* argv[])
@@ -158,7 +159,9 @@ void UResizeWindow(GLFWwindow* window, int width, int height)
 // -------------------------------------------------------
 void UMousePositionCallback(GLFWwindow* window, double xpos, double ypos)
 {
-    cout << "Mouse at (" << xpos << ", " << ypos << ")" << endl;
+    if (leftClick) {
+        cout << "Mouse at (" << xpos << ", " << ypos << ")" << endl;
+    }
 }
 
 
@@ -177,10 +180,14 @@ void UMouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
     {
         case GLFW_MOUSE_BUTTON_LEFT:
         {
-            if (action == GLFW_PRESS)
+            if (action == GLFW_PRESS) {
                 cout << "Left mouse button pressed" << endl;
-            else
+                leftClick = true;
+            }
+            else {
                 cout << "Left mouse button released" << endl;
+                leftClick = false;
+            }
         }
         break;
 
