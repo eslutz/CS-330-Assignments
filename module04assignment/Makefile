@@ -7,7 +7,7 @@ EXECS = module_04_assignment
 
 all : $(EXECS) postbuild
 
-module_03_assignment : module_04_assignment.cpp
+module_04_assignment : module_04_assignment.cpp
 	$(CC) $(CFLAGS) -o module_04_assignment module_04_assignment.cpp $(LDLIBS)
 
 

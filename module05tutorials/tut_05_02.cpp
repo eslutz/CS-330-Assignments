@@ -80,13 +80,15 @@ const GLchar * vertexShaderSource = GLSL(440,
 const GLchar * fragmentShaderSource = GLSL(440,
     in vec2 vertexTextureCoordinate;
 
-    out vec4 fragmentColor;
+    //out vec4 fragmentColor;
+    out vec3 fragmentColor;
 
     uniform sampler2D uTexture;
 
     void main()
     {
-        fragmentColor = texture(uTexture, vertexTextureCoordinate); // Sends texture to the GPU for rendering
+        //fragmentColor = texture(uTexture, vertexTextureCoordinate); // Sends texture to the GPU for rendering
+        fragmentColor = vec3(texture(uTexture, vertexTextureCoordinate).r); // Sends texture to the GPU for rendering
     }
 );
 
@@ -332,7 +334,7 @@ bool UCreateTexture(const char* filename, GLuint &textureId)
     unsigned char *image = stbi_load(filename, &width, &height, &channels, 0);
     if (image)
     {
-        flipImageVertically(image, width, height, channels);
+        //flipImageVertically(image, width, height, channels);
 
         glGenTextures(1, &textureId);
         glBindTexture(GL_TEXTURE_2D, textureId);
@@ -344,7 +346,10 @@ bool UCreateTexture(const char* filename, GLuint &textureId)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        if (channels == 3)
+        if (channels == 1)
+            glTexImage2D(
+                GL_TEXTURE_2D, 0, GL_RED, width, height, 0, GL_RED, GL_UNSIGNED_BYTE, image);
+        else if (channels == 3)
         	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
         else if (channels == 4)
         	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
