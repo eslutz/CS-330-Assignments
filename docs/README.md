@@ -25,3 +25,12 @@ The goal of this assignment is to write commented modern OpenGL code to apply te
 - WASD keys: These keys should be used to control the forward, backward, left, and right motion.
 - QE keys: These keys should be used to control the upward and downward movement.
 - Mouse cursor: This should be used to change the orientation of the camera so it can look up and down or left and right. Mouse scroll: This should be used to adjust the speed of the movement, or the speed the camera travels around the scene.
+
+## [Module 6 Assignment](../module06assignment)
+
+The goal of this assignment is to create two lights and place them at different angles relative to your completed pyramid. Give the key light an intensity of 100% and the fill light an intensity of 10%. Then, apply a greenish color to the key light.
+
+- LK keys: Start/stop light orbit
+- WASD keys: These keys should be used to control the forward, backward, left, and right motion.
+- QE keys: These keys should be used to control the upward and downward movement.
+- Mouse cursor: This should be used to change the orientation of the camera so it can look up and down or left and right. Mouse scroll: This should be used to adjust the speed of the movement, or the speed the camera travels around the scene.
