@@ -34,7 +34,10 @@ public:
 
 	Brick(BRICKTYPE bt, float xx, float yy, float ww)
 	{
-		brick_type = bt; x = xx; y = yy, width = ww;
+		brick_type = bt;
+		x = xx;
+		y = yy,
+		width = ww;
 		onoff = ON;
 		health = 50;
 		r = 0.0f;
@@ -48,6 +51,12 @@ public:
 		{
 			double halfside = width / 2;
 
+			if (brick_type == REFLECTIVE)
+			{
+				glColor3d(1, 0, 1);
+			}
+			else
+			{
 			// Set brick color
 			float color = health % 10 == 0 ? 1 : (float)(0.4 + (1 - 0.4) * ((health % 10) - 0) / (9 - 0));
 			if (health > 40)
@@ -70,6 +79,7 @@ public:
 			{
 				glColor3d(color, 0, 0);
 			}
+			}
 
 			glBegin(GL_POLYGON);
 
@@ -87,18 +97,19 @@ public:
 class Circle
 {
 public:
-	float red, green, blue;
+	float x, y;
+	int direction; // 1=up 2=right 3=down 4=left 5=up right 6=up left 7=down right 8=down left
 	float radius;
-	float x;
-	float y;
+	float red, green, blue;
 	float speed = 0.03;
 	int direction; // 1=up 2=right 3=down 4=left 5 = up right   6 = up left  7 = down right  8= down left
 
-	Circle(double xx, double yy, double rr, int dir, float rad, float r, float g, float b)
+	Circle(double xx, double yy, int dir, float rad, float r, float g, float b)
 	{
 		x = xx;
 		y = yy;
-		radius = rr;
+		direction = dir;
+		radius = rad;
 		red = r;
 		green = g;
 		blue = b;
@@ -130,7 +141,7 @@ public:
 					x = x + 0.03;
 					y = y + 0.04;
 				}
-				// Else no health left so destroy brick
+				// Else, no health left so destroy brick
 				else
 				{
 					brk->onoff = OFF;
@@ -158,40 +169,43 @@ public:
 			}
 		}
 
-		if (direction == 2 || direction == 5 || direction == 7)  // right
+	void MoveOneStep()
 		{
-			if (x < 1 - radius)
+		// 1=up 2=right 3=down 4=left 5=up right 6=up left 7=down right 8=down left
+		switch (direction)
 			{
-				x += speed;
-			}
-			else
-			{
-				direction = GetRandomDirection();
-			}
-		}
-
-		if (direction == 3 || direction == 7 || direction == 8)  // down
-		{
-			if (y < 1 - radius)
-			{
-				y += speed;
-			}
-			else
-		{
-				direction = GetRandomDirection();
-			}
-		}
-
-		if (direction == 4 || direction == 6 || direction == 8)  // left
-		{
-			if (x > -1 + radius)
-			{
-				x -= speed;
-			}
-			else
-			{
-				direction = GetRandomDirection();
-			}
+			case 1:
+				y += 0.03;
+				break;
+			case 2:
+				x += 0.03;
+				break;
+			case 3:
+				y -= 0.3;
+				break;
+			case 4:
+				x -= 0.3;
+				break;
+			case 5:
+				x += 0.03;
+				y += 0.03;
+				break;
+			case 6:
+				x -= 0.03;
+				y += 0.03;
+				break;
+			case 7:
+				x += 0.03;
+				y -= 0.03;
+				break;
+			case 8:
+				x -= 0.03;
+				y -= 0.03;
+				break;
+			default:
+				x = 0;
+				y = 0;
+				break;
 		}
 	}
 
@@ -317,7 +331,7 @@ void processInput(GLFWwindow* window)
 		r = rand() / 10000;
 		g = rand() / 10000;
 		b = rand() / 10000;
-		Circle B(0, 0, 02, 2, 0.05, r, g, b);
+		Circle B(0, -1, 6, 0.05, r, g, b);
 		world.push_back(B);
 	}
 }
