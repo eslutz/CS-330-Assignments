@@ -27,6 +27,7 @@ class Brick
 public:
 
 	float x, y, width;
+	float r, g, b;
 	BRICKTYPE brick_type;
 	ONOFF onoff;
 	int health;
@@ -35,7 +36,10 @@ public:
 	{
 		brick_type = bt; x = xx; y = yy, width = ww;
 		onoff = ON;
-		health = 5;
+		health = 50;
+		r = 0.0f;
+		g = 0.0f;
+		b = 1.0f;
 	};
 
 	void drawBrick()
@@ -45,23 +49,26 @@ public:
 			double halfside = width / 2;
 
 			// Set brick color
-			switch (health)
+			float color = health % 10 == 0 ? 1 : (float)(0.4 + (1 - 0.4) * ((health % 10) - 0) / (9 - 0));
+			if (health > 40)
 			{
-			case 5:
-				glColor3d(0, 0, 1);
-				break;
-			case 4:
-				glColor3d(0, 1, 1);
-				break;
-			case 3:
-				glColor3d(0, 1, 0);
-				break;
-			case 2:
-				glColor3d(1, 1, 0);
-				break;
-			case 1:
-				glColor3d(1, 0, 0);
-				break;
+				glColor3d(0, 0, color);
+			}
+			else if (health > 30)
+			{
+				glColor3d(0, color, color);
+			}
+			else if (health > 20)
+			{
+				glColor3d(0, color, 0);
+			}
+			else if (health > 10)
+			{
+				glColor3d(color, color, 0);
+			}
+			else
+			{
+				glColor3d(color, 0, 0);
 			}
 
 			glBegin(GL_POLYGON);
@@ -206,6 +213,8 @@ vector<Brick> bricks;
 
 // Create brick pattern
 // --------------------
+// 1 for brick
+// 0 for open space
 vector<vector<int>> gameGrid = {
 	{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 	{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
@@ -242,12 +251,20 @@ int main(void)
 		{
 			if (gameGrid[i][j] == 1)
 			{
+				// Determing position of brick based on position in gameGrid matrix
 				const float xPos = (((j + 1) / 10.0) * 2) - 1.1;
 				const float yPos = (((i + 1) / 10.0) * -2) + 1.1;
-				bricks.push_back(Brick(DESTRUCTABLE, xPos, yPos, 0.19));
+				// 1 in 6 chance the brick will be indestructable
+				if (rand() % 6 == 0)
+				{
+					bricks.push_back(Brick(REFLECTIVE, xPos, yPos, 0.19));
+				}
+				else
+				{
+					bricks.push_back(Brick(DESTRUCTABLE, xPos, yPos, 0.19));
+				}
 			}
 		}
-
 	}
 
 	while (!glfwWindowShouldClose(window))
@@ -259,6 +276,7 @@ int main(void)
 		ratio = width / (float)height;
 		glViewport(0, 0, width, height);
 		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.412f, 0.412f, 0.412f, 1.0f);
 
 		processInput(window);
 
