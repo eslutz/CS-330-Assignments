@@ -8,7 +8,7 @@
 #include <GL/glew.h> // GLEW library
 #include <GLFW/glfw3.h> // GLFW library
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>      // Image loading Utility functions
+#include <stb_image.h> // Image loading Utility functions
 
 // GLM Math Header inclusions
 #include <glm/glm.hpp>
