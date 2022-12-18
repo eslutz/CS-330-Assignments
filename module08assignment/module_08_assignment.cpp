@@ -14,7 +14,7 @@
 
 #include "linmath.h"
 
-#include <GLFW\glfw3.h>
+#include <GLFW/glfw3.h>
 // GLM Math Header inclusions
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
@@ -27,7 +27,7 @@ const int window_width = 480;
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-enum BRICKTYPE { REFLECTIVE, DESTRUCTABLE }; // Represents a destructable or non-destructable brick
+enum BRICKTYPE { LAUNCHER, REFLECTIVE, DESTRUCTABLE }; // Represents a destructable or non-destructable brick
 enum ONOFF { ON, OFF }; // Represents the on or off state of a brick or circle
 enum DIRECTION { UP, RIGHT, DOWN, LEFT }; // Represents the four possible collision directions
 
@@ -52,15 +52,19 @@ public:
 		health = 50;
 	};
 
-	void drawBrick()
+	void DrawBrick()
 	{
 		if (onoff == ON)
 		{
 			double halfside = width / 2;
 
-			if (brick_type == REFLECTIVE)
+			if (brick_type == LAUNCHER)
 			{
-				glColor3d(1, 0, 1);
+				glColor3d(0.16f, 0.161f, 0.157f);
+			}
+			else if (brick_type == REFLECTIVE)
+			{
+				glColor3d(1.0f, 0.0f, 1.0f);
 			}
 			else
 			{
@@ -133,7 +137,8 @@ public:
 		// If collision is true
 		if (std::get<0>(collision))
 		{
-			if (brk->brick_type == DESTRUCTABLE)
+			if (brk->brick_type == LAUNCHER ||
+				brk->brick_type == DESTRUCTABLE)
 			{
 				brk->health -= strength;
 			}
@@ -337,6 +342,8 @@ public:
 
 vector<Circle> circles;
 vector<Brick> bricks;
+Brick launcher(LAUNCHER, glm::vec2(0, -1), 0.2f);
+float launchAngle = 0.0f;
 
 // Create brick pattern
 // --------------------
@@ -374,6 +381,7 @@ int main(void)
 
 	glfwSetKeyCallback(window, key_callback);
 
+	// Create bricks in positions specified in gameGrid
 	for (int i = 0; i < gameGrid.size(); i++)
 	{
 		for (int j = 0; j < gameGrid[i].size(); j++)
@@ -416,6 +424,7 @@ int main(void)
 			}
 			else
 			{
+				circles[i].CheckCollision(&launcher);
 				for (int x = 0; x < bricks.size(); x++)
 				{
 					circles[i].CheckCollision(&bricks[x]);
@@ -434,6 +443,9 @@ int main(void)
 			}
 		}
 
+		// Draw ball launcher
+		launcher.DrawBrick();
+
 		// Draw bricks
 		for (int x = 0; x < bricks.size(); x++)
 		{
@@ -443,7 +455,7 @@ int main(void)
 			}
 			else
 			{
-				bricks[x].drawBrick();
+				bricks[x].DrawBrick();
 			}
 		}
 
@@ -459,12 +471,54 @@ int main(void)
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
 		glfwSetWindowShouldClose(window, true);
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS ||
+		glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+	{
+		launcher.position.x -= 0.03f;
+		if (launcher.position.x < (- 1.0f + (launcher.width / 2)))
+		{
+			launcher.position.x = -1.0f;
+		}
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS ||
+		glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+	{
+		launcher.position.x += 0.03f;
+		if (bricks[0].position.x > (1.0f - (launcher.width / 2)))
+		{
+			launcher.position.x = 1.0f;
+		}
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS ||
+		glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+	{
+		launchAngle += 0.0001f;
+		if (launchAngle >= 0.0009f)
+		{
+			launchAngle = 0.0009f;
+		}
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS ||
+		glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
+	{
+		launchAngle -= 0.0001f;
+		if (launchAngle <= -0.0009f)
+		{
+			launchAngle = -0.0009f;
+		}
+	}
 
 	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
 	{
 		// velocity.x: neg goes left, pos goes right, 1 goes vertical, 9 goes horizontal
-		Circle B(glm::vec2(0.0f, -1.0f), 0.05, glm::vec2(-0.0005f, 0.0005f));
-		circles.push_back(B);
+		Circle ball(glm::vec2(launcher.position.x, -1.0f), 0.05, glm::vec2(launchAngle, 0.0005f));
+		circles.push_back(ball);
 	}
 }
