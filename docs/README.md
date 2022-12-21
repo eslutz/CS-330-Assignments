@@ -1,12 +1,13 @@
-# CS-330-Assignments
+# CS-330-Tutorials-and-Assignments
 
-These files contain the tutorials and assignments for SNHU's CS-330 course on computational graphics and visualization using C++ and OpenGL.
+These files contain the tutorials and assignments from SNHU's CS-330 course on computational graphics and visualization using C++ and OpenGL.
 
 - [Module 2](#module-2-assignment)
 - [Module 3](#module-3-assignment)
 - [Module 4](#module-4-assignment)
 - [Module 5](#module-5-assignment)
 - [Module 6](#module-6-assignment)
+- [Module 8](#module-8-assignment)
 
 ## [Module 2 Assignment](../module02assignment)
 
@@ -50,3 +51,14 @@ The goal of this assignment is to create two lights and place them at different 
 - Mouse cursor: This should be used to change the orientation of the camera so it can look up and down or left and right. Mouse scroll: This should be used to adjust the speed of the movement, or the speed the camera travels around the scene.
 
 ![Module 6 assignment 3D scene light video](images/module_6_assignment.gif)
+
+## [Module 8 Assignment](../module08assignment)
+
+The goal of this assignment is to manipulate the provided code in a number of different ways and explain the changes made to the code ([explanation of changes](Module%208%20Assignment.pdf)).
+
+- Arrange the bricks into an organizational structure that promotes engagement with the animation
+- Apply physics laws to the circles
+- Alter the state of the bricks upon collision
+- Alter the state of the circles upon collision
+
+![Module 8 assignment animation](images/module_8_assignment.gif)
